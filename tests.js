@@ -1,6 +1,6 @@
 const { describe, it } = require('mocha')
 const { expect } = require('chai')
-const validatePassword = require('./index')
+const validatePassword = require('./validatePassword')
 
 describe('validatePassword', () => {
   it('returns true when the password meets all requirements', () => {
@@ -33,7 +33,7 @@ describe('validatePassword', () => {
     expect(valid).to.equal(false)
   })
 
-  it('returns false when the password is missing a special character', () => {
+  it.only('returns false when the password is missing a special character', () => {
     const valid = validatePassword('P455w0rd1')
 
     expect(valid).to.equal(false)
